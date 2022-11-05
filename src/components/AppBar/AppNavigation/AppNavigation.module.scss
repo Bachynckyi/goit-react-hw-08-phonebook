@@ -1,0 +1,24 @@
+.link {
+    font-size: 26px;
+    text-decoration: none;
+    color: gray;
+    
+    &:hover {
+        color: pink;
+        border-bottom: 4px solid pink;
+    };
+    
+    &:not(:last-child) {
+        margin-right: 15px;
+    };
+    };
+    
+    .active {
+    font-size: 26px;
+    text-decoration: none;
+    color: pink;
+    
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+    }
