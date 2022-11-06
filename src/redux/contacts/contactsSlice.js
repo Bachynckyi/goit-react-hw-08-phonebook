@@ -39,12 +39,12 @@ export const userSlice = createSlice({
       [addContact.fulfilled](state, action){
         state.items.push(action.payload);
         Loading.remove();
-        Notify.success('Сontact added successfully', {position: 'center-top'});
+        Notify.success('Сontact added successfully.', {position: 'center-top'});
       },
       [addContact.rejected](state, action){
         state.error = action.payload;
         Loading.remove();
-        Notify.warning('Ooops, something wrong', {position: 'center-top'});
+        Notify.warning('Ooops, something wrong. Please try again.', {position: 'center-top'});
       },
       [deleteContact.pending](state){
         Loading.dots({
@@ -55,12 +55,12 @@ export const userSlice = createSlice({
       [deleteContact.fulfilled](state, action){
         state.items = state.items.filter(({ id }) => id !== action.meta.arg);
         Loading.remove();
-        Notify.success('Сontact deleted successfully', {position: 'center-top'});
+        Notify.success('Сontact deleted successfully.', {position: 'center-top'});
       },
       [deleteContact.rejected](state, action){
         state.error = action.payload;
         Loading.remove();
-        Notify.warning('Ooops, something wrong', {position: 'center-top'});
+        Notify.warning('Ooops, something wrong. Please try again.', {position: 'center-top'});
       },
     },
 });

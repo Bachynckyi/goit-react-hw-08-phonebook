@@ -59,6 +59,20 @@ const authSlice = createSlice({
       [authOperations.logOut.rejected](state,action) {
         Loading.remove();
       },
+      [authOperations.fetchCurrentUser.pending](state,action) {
+        Loading.dots({
+          svgColor: 'rgba(0,0,255)',
+          svgSize: '200px',
+        })
+      },
+      [authOperations.fetchCurrentUser.fulfilled](state, action) {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        Loading.remove();
+      },
+      [authOperations.fetchCurrentUser.rejected](state, action) {
+        Loading.remove();
+      }
     },
 });
 

@@ -4,8 +4,16 @@ import { Home } from '../pages/Home/Home';
 import { Register } from "pages/Register/Register";
 import { LogIn } from "pages/Login/Login";
 import { Contacts } from 'pages/Contacts/Contacts';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import authOperations from 'redux/auth/authOperations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser())
+  }, [dispatch]);
+
   return (
         <div
           style={{
@@ -19,7 +27,8 @@ export const App = () => {
         >
         <Routes>
           <Route path='/' element={<Layout/>}>
-              <Route path="home" index element={<Home/>}/>
+              <Route index element={<Navigate to="/home"/>}/>
+              <Route path="home" element={<Home/>}/>
               <Route path="register" element={<Register/>}/>
               <Route path="login" element={<LogIn/>}/>
               <Route path="contacts" element={<Contacts/>}/>
