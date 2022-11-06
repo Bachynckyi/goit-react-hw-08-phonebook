@@ -37,7 +37,7 @@ export const userSlice = createSlice({
         });
       },
       [addContact.fulfilled](state, action){
-        state.items.push(action.payload.data);
+        state.items.push(action.payload);
         Loading.remove();
         Notify.success('Сontact added successfully', {position: 'center-top'});
       },
