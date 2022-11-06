@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
 import { useDispatch } from 'react-redux';
-import * as operations from 'redux/operations';
+import * as operations from 'redux/contacts/contactsOperations';
 
 export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -9,7 +9,6 @@ export const ContactItem = ({ name, number, id }) => {
   return (
     <li className={css.item}>
       <div>
-        <span className={css.id}>{id}.</span>
         <b><span>{name}:</span></b>
         <span className={css.number}>{number}</span>
       </div>

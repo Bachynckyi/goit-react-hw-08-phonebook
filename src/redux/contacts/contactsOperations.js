@@ -1,11 +1,12 @@
-import * as contactsAPI from '../services/servicesAPI';
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
+axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
-export const getContacts = createAsyncThunk("contacts/getContacts", async () => {
+export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async (token) => {
   try {
-    const contacts = await contactsAPI.fetchContacts();
-    return contacts;
+    const contacts = await axios.get('/contacts');
+    return contacts.data;
   }
   catch(error) {
     return error;
@@ -16,7 +17,7 @@ export const addContact = createAsyncThunk(
   'contacts/addContact',
   async newState => {
     try {
-      const contact = await contactsAPI.addContact(newState);
+      const contact = await axios.post('/contacts', newState);
       return contact;
     } catch (error) {
       return error;
@@ -26,9 +27,9 @@ export const addContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async id => {
+  async contactId => {
     try {
-      const deletedcontact = await contactsAPI.deleteContact(id);
+      const deletedcontact = await axios.delete(`/contacts/${contactId}`);
       return deletedcontact.id;
     } catch (error) {
       return error;

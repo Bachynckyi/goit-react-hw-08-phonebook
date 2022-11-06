@@ -2,14 +2,13 @@ import css from './ContactForm.module.css';
 import { useState } from 'react';
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from 'react-redux';
-import * as operations from 'redux/operations';
+import * as operations from 'redux/contacts/contactsOperations';
 
 export const ContactForm = () => {
     const dispatch = useDispatch();
-
     const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const contacts = useSelector(state => state.addContact.items);
+    const [number, setNumber] = useState("");
+    const contacts = useSelector(state => state.contacts.items);
     const checkName = contacts.map(contact => contact.name);
 
     const handleChange = event => {
@@ -17,7 +16,7 @@ export const ContactForm = () => {
         switch(name){
             case 'name': setName(value);
               break;
-            case 'phone': setPhone(value);
+            case 'number': setNumber(value);
               break;
             default:
               return;
@@ -30,14 +29,14 @@ export const ContactForm = () => {
         if (checkingName) {
             return alert(`${name} is already in contacts`);
         };      
-        const newState = { id: nanoid(), name, phone};
+        const newState = { id: nanoid(), name, number};
         dispatch(operations.addContact(newState));
         reset();
     };
 
     const reset = () => {
         setName("");
-        setPhone("");
+        setNumber("");
     }
 
     return (
@@ -60,10 +59,10 @@ export const ContactForm = () => {
             <div>
                 <label className={css.label}>Number
                     <input
-                        value={phone}
+                        value={number}
                         onChange={handleChange}
                         type="tel"
-                        name="phone"
+                        name="number"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required

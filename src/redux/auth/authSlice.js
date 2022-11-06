@@ -13,7 +13,7 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     extraReducers: {
-      [authOperations.register.fulfilled](state,action) {
+      [authOperations.register.pending](state,action) {
         Loading.dots({
           svgColor: 'rgba(0,0,255)',
           svgSize: '200px',
@@ -41,6 +41,9 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         Loading.remove();
       },
+      [authOperations.logIn.rejected](state,action) {
+        Loading.remove();
+      },
       [authOperations.logOut.pending](state,action) {
         Loading.dots({
           svgColor: 'rgba(0,0,255)',
@@ -51,6 +54,9 @@ const authSlice = createSlice({
         state.user = {name: null, email: null};
         state.token = null;
         state.isLoggedIn = false;
+        Loading.remove();
+      },
+      [authOperations.logOut.rejected](state,action) {
         Loading.remove();
       },
     },

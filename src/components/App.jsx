@@ -1,11 +1,9 @@
-// import { ContactForm } from "./ContactForm/ContactForm";
-// import { ContactList } from './ContactList/Contactlist'; 
-// import { Filter } from "./Filter/Filter";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from "./Layout";
 import { Home } from '../pages/Home/Home';
 import { Register } from "pages/Register/Register";
 import { LogIn } from "pages/Login/Login";
+import { Contacts } from 'pages/Contacts/Contacts';
 
 export const App = () => {
   return (
@@ -24,16 +22,10 @@ export const App = () => {
               <Route path="home" index element={<Home/>}/>
               <Route path="register" element={<Register/>}/>
               <Route path="login" element={<LogIn/>}/>
+              <Route path="contacts" element={<Contacts/>}/>
               <Route path="*" element={<Navigate to="/home"/>} />
           </Route>
         </Routes>
-          {/* <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-            <h1 style={{marginTop: '20px', marginBottom: '20px'}}>Phonebook</h1>
-            <ContactForm/>
-            <h2 style={{marginTop: '20px', marginBottom: '20px'}}>Contacts</h2>
-            <Filter/>
-            <ContactList/> */}
-          {/* </div> */}
         </div>
         )
 };

@@ -1,11 +1,11 @@
 import css from './Filter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/userSlice';
+import { filterContacts } from 'redux/contacts/contactsSlice';
 
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.addContact.filter);
+  const filter = useSelector(state => state.contacts.filter);
     return (
       <div className={css.SearchBox}>
             <span className={css.SearchBox_label}>Find contacts by name</span>
