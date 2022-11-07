@@ -1,23 +1,24 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import authSelectors from 'redux/auth/authSelectors';
 import css from './AppNavigation.module.scss';
 
 export const AppNavigation = () => {
-    const navItems = [
-        {href: 'home', text: 'Home'},
-        {href: 'contacts', text: 'Contacts'}
-    ];
-
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     return (
         <div>
-        {navItems.map(({href, text}) => (
             <NavLink
-            className={({ isActive }) =>
-                isActive ? `${css.active}` : `${css.link}`
-            }
-            to={href}
-            key={href}
-            >{text}
+            className={({ isActive }) => isActive ? `${css.active}`:`${css.link}`}
+            to="home"
+            key="home"
+            >Home
             </NavLink>
-    ))}
-    </div>)
+            {isLoggedIn && (            
+            <NavLink
+            className={({ isActive }) => isActive ? `${css.active}`:`${css.link}`}
+            to="contacts"
+            key="contacts"
+            >Contacts
+            </NavLink>)}
+        </div>)
 };

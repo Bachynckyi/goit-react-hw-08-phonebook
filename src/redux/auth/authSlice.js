@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import authOperations from 'redux/auth/authOperations';
 import { Loading } from "notiflix";
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const initialState = {
     user: {name: null, email: null},
     token: null,
     isLoggedIn: false,
+    isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -43,6 +44,7 @@ const authSlice = createSlice({
       },
       [authOperations.logIn.rejected](state,action) {
         Loading.remove();
+        Notify.warning('Ooops, something wrong. Please try again.', {position: 'center-top'});
       },
       [authOperations.logOut.pending](state,action) {
         Loading.dots({
@@ -60,6 +62,7 @@ const authSlice = createSlice({
         Loading.remove();
       },
       [authOperations.fetchCurrentUser.pending](state,action) {
+        state.isRefreshing = true;
         Loading.dots({
           svgColor: 'rgba(0,0,255)',
           svgSize: '200px',
@@ -68,9 +71,11 @@ const authSlice = createSlice({
       [authOperations.fetchCurrentUser.fulfilled](state, action) {
         state.user = action.payload;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
         Loading.remove();
       },
       [authOperations.fetchCurrentUser.rejected](state, action) {
+        state.isRefreshing = false;
         Loading.remove();
       }
     },
