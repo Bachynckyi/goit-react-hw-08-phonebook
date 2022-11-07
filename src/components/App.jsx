@@ -9,7 +9,7 @@ import { PublicRoute } from 'pages/PublicRoute';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Register = lazy(() => import('pages/Register/Register'));
-const LogIn = lazy(() => import('pages/LogIn/LogIn'));
+const LogIn = lazy(() => import('pages/Login/Login'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 
 export const App = () => {
