@@ -1,15 +1,16 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Home } from '../pages/Home/Home';
-import { Register } from "pages/Register/Register";
-import { LogIn } from "pages/Login/Login";
-import { Contacts } from 'pages/Contacts/Contacts';
 import { useDispatch, useSelector } from 'react-redux';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, lazy } from 'react';
 import authOperations from 'redux/auth/authOperations';
 import authSelectors from 'redux/auth/authSelectors';
 import Layout from './Layout';
 import { PrivateRoute } from 'pages/PrivateRoute';
 import { PublicRoute } from 'pages/PublicRoute';
+
+const Home = lazy(() => import('../pages/Home/Home'));
+const Register = lazy(() => import('pages/Register/Register'));
+const LogIn = lazy(() => import('pages/LogIn/LogIn'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 
 export const App = () => {
   const isRefreshing = useSelector(authSelectors.getIsRefreshing);
@@ -28,7 +29,7 @@ export const App = () => {
           fontSize: 40,
           color: '#010101',
         }}>
-        <Suspense fallback={null}>    
+        <Suspense fallback={null} >    
             <Routes>
               <Route path="/" element={<Layout />}>
                   <Route path="home" index element={<Home/>}/>

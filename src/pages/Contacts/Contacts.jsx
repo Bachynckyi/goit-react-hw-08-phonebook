@@ -12,4 +12,6 @@ export const Contacts = () => {
             <ContactList/> 
           </div>
       );
-    };
+};
+
+export default Contacts;
