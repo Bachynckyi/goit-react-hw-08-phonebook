@@ -4,8 +4,8 @@ text-decoration: none;
 color: gray;
 
 &:hover {
-    color: pink;
-    border-bottom: 4px solid pink;
+    color: #0000ff;
+    border-bottom: 4px solid #0000ff;
 };
 
 &:not(:last-child) {
@@ -16,7 +16,7 @@ color: gray;
 .active {
 font-size: 26px;
 text-decoration: none;
-color: pink;
+color: #0000ff;
 
 &:not(:last-child) {
     margin-right: 15px;

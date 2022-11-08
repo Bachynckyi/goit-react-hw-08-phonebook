@@ -8,7 +8,7 @@ export const Filter = () => {
   const filter = useSelector(state => state.contacts.filter);
     return (
       <div className={css.SearchBox}>
-            <span className={css.SearchBox_label}>Find contacts by name</span>
+            <h4 className={css.SearchBox_label}>You can find contacts by name or number</h4>
             <input
               className={css.SearchBox_input}
               type="text"

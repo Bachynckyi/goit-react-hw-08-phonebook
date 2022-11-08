@@ -25,10 +25,12 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         Loading.remove();
+        Notify.success('Sign Up is succesfull.', {position: 'center-top'});
       },
       [authOperations.register.rejected](state,action){
         state.error = action.payload;
         Loading.remove();
+        Notify.warning('Ooops, something wrong. Please try again with another email.', {position: 'center-top'});
       },
       [authOperations.logIn.pending](state,action) {
         Loading.dots({
@@ -41,6 +43,7 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         Loading.remove();
+        Notify.success('Sign In is succesfull.', {position: 'center-top'});
       },
       [authOperations.logIn.rejected](state,action) {
         Loading.remove();
@@ -57,9 +60,11 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
         Loading.remove();
+        Notify.success('Log Out is succesfull.', {position: 'center-top'});
       },
       [authOperations.logOut.rejected](state,action) {
         Loading.remove();
+        Notify.warning('Ooops, something wrong. Please try again.', {position: 'center-top'});
       },
       [authOperations.fetchCurrentUser.pending](state,action) {
         state.isRefreshing = true;

@@ -5,16 +5,20 @@
     align-items: center;
 }
 
-.SearchBox-label {
+.SearchBox_label {
     font-size: 20px;
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .SearchBox_input {
     width: 300px;
     height: 30px;
     border-radius: 5px;
-    margin-top: 25px;
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     outline: 1px solid #000;
     border: 1px solid #000;
 }

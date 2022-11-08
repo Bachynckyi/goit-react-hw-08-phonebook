@@ -5,9 +5,9 @@ import { Filter } from "components/Filter/Filter";
 export const Contacts = () => {
       return (
           <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-            <h1 style={{marginTop: '20px', marginBottom: '20px'}}>Phonebook</h1>
+            <h2 style={{marginTop: '10px', marginBottom: '10px', fontSize: 30, color: "grey",}}>Please add contact</h2>
             <ContactForm/>
-            <h2 style={{marginTop: '20px', marginBottom: '20px'}}>Contacts</h2>
+            <h3 style={{marginTop: '10px', marginBottom: '10px', fontSize: 30, color: "#0000ff",}}>Your contacts</h3>
             <Filter/>
             <ContactList/> 
           </div>

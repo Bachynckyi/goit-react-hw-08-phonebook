@@ -9,7 +9,8 @@ export const ContactList = () => {
   const dispatch = useDispatch();
   const data = useSelector(state => state.contacts.items);
   const filterContacts = useSelector(state => state.contacts.filter);
-  const filteredList = data.filter(contact => contact.name.toLowerCase().includes(filterContacts.toLowerCase()));
+  const filteredList = data.filter(contact => contact.name.toLowerCase().includes(filterContacts.toLowerCase()) ||
+  contact.number.includes(filterContacts));
   const token = useSelector(state => state.auth.token);
 
   useEffect(() => {
