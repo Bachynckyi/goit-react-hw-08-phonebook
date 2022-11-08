@@ -1,4 +1,4 @@
-import css from './ContactForm.module.css';
+import scss from './ContactForm.module.scss';
 import { useState } from 'react';
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,9 +40,9 @@ export const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className={css.form}>
+        <form onSubmit={handleSubmit} className={scss.form}>
             <div>
-                <label className={css.label}>Name
+                <label className={scss.label}>Name
                     <input
                         value={name}
                         onChange={handleChange}
@@ -52,12 +52,12 @@ export const ContactForm = () => {
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                         placeholder='Please enter name'
-                        className={css.addInput}
+                        className={scss.addInput}
                     />
                 </label>
             </div>
             <div>
-                <label className={css.label}>Number
+                <label className={scss.label}>Number
                     <input
                         value={number}
                         onChange={handleChange}
@@ -67,11 +67,11 @@ export const ContactForm = () => {
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         placeholder='Please enter number'
-                        className={css.addInput}
+                        className={scss.addInput}
                         />
                 </label>
             </div>
-            <button type='submit' className={css.button_submit}>Add Contact</button>
+            <button type='submit' className={scss.button_submit}>Add Contact</button>
         </form>
     )
 };

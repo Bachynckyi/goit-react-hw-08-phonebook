@@ -21,9 +21,9 @@
     margin-bottom: 10px;
     outline: 1px solid #000;
     border: 1px solid #000;
-}
 
-.SearchBox_input:focus {
-    outline: 1px solid blue;
-    border: 1px solid blue;
+    &:focus {
+        outline: 1px solid blue;
+        border: 1px solid blue;
+    }
 }

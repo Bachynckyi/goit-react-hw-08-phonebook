@@ -6,11 +6,11 @@
     font-size: 20px;
     outline: 1px solid #000;
     border: 1px solid #000;
-}
 
-.addInput:focus {
-    outline: 1px solid blue;
-    border: 1px solid blue;
+    &:hover{
+        outline: 1px solid blue;
+        border: 1px solid blue;
+    }
 }
 
 .label {
@@ -41,9 +41,9 @@
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.button_submit:hover {
-    color: #fff;
-    background-color: blue;
+    
+    &:hover{
+        color: #fff;
+        background-color: blue;
+    }
 }

@@ -1,6 +1,6 @@
 import { ContactItem } from "./ContactItem/ContactItem"
-import css from './ContactList.module.css';
-import theme from './ContactItem/ContactItem.module.css';
+import scss from './ContactList.module.scss';
+import theme from './ContactItem/ContactItem.module.scss';
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts  } from "redux/contacts/contactsOperations";
@@ -18,7 +18,7 @@ export const ContactList = () => {
   }, [dispatch, token]);
 
   return (
-        <ol className={css.contactList}>
+        <ol className={scss.contactList}>
             {filteredList.length !== 0 ? (
               filteredList.map(dataItem => {
               return (
