@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import authOperations from 'redux/auth/authOperations';
+import authOperations from "redux/auth/authOperations";
+import scss from "./Register.module.scss";
 
 export const Register = () => {
     const dispatch = useDispatch();
@@ -35,12 +36,13 @@ export const Register = () => {
     };
 
     return (
-        <div>
-            <h1>Registration form</h1>
-            <form onSubmit={handleSubmit}>
+        <div className={scss.container}>
+            <h5 className={scss.title}>Registration form</h5>
+            <form onSubmit={handleSubmit} className={scss.form}>
             <div>
-                <label>Name
+                <label className={scss.label}>Name
                     <input
+                        className={scss.input}
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -53,8 +55,9 @@ export const Register = () => {
                 </label>
             </div>
             <div>
-                <label>Login
+                <label className={scss.label}>Login
                     <input
+                        className={scss.input}
                         type="email"
                         name="email"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
@@ -66,8 +69,9 @@ export const Register = () => {
                 </label>
             </div>
             <div>
-                <label>Password
+                <label className={scss.label}>Password
                     <input
+                        className={scss.input}
                         type="password"
                         name="password"
                         required
@@ -77,7 +81,7 @@ export const Register = () => {
                         />
                 </label>
             </div>
-            <button type='submit'>Sign Up</button>
+            <button type='submit' className={scss.buttonSignUp}>Sign Up</button>
         </form>
         </div>
     );

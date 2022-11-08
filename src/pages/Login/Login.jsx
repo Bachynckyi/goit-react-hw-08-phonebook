@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import authOperations from 'redux/auth/authOperations';
+import scss from "./Login.module.scss";
 
 export const LogIn = () => {
     const dispatch = useDispatch();
@@ -31,12 +32,13 @@ export const LogIn = () => {
     };
 
     return (
-        <div>
-            <h1>Please sign in</h1>
-            <form onSubmit={handleSubmit}>
+        <div className={scss.container}> 
+            <h5 className={scss.title}>Please sign in</h5>
+            <form onSubmit={handleSubmit} className={scss.form}>
             <div>
-                <label>Login
+                <label className={scss.label}>Login
                     <input
+                        className={scss.input}
                         type="email"
                         name="email"
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
@@ -48,8 +50,9 @@ export const LogIn = () => {
                 </label>
             </div>
             <div>
-                <label>Password
+                <label className={scss.label}>Password
                     <input
+                        className={scss.input}
                         type="password"
                         name="password"
                         required
@@ -59,7 +62,7 @@ export const LogIn = () => {
                         />
                 </label>
             </div>
-            <button type='submit'>Sign In</button>
+            <button type='submit' className={scss.buttonSignIn}>Sign In</button>
         </form>
         </div>
     );
