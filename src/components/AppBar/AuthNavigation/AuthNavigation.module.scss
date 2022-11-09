@@ -3,14 +3,14 @@ font-size: 26px;
 text-decoration: none;
 color: gray;
 
-&:hover {
-    color: #0000ff;
-    border-bottom: 4px solid #0000ff;
-};
+    &:hover {
+        color: #0000ff;
+        border-bottom: 4px solid #0000ff;
+    }
 
-&:not(:last-child) {
-    margin-right: 15px;
-};
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
 };
 
 .active {
@@ -18,7 +18,7 @@ font-size: 26px;
 text-decoration: none;
 color: #0000ff;
 
-&:not(:last-child) {
-    margin-right: 15px;
-}
-}
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+};

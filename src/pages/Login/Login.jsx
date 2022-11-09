@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import authOperations from 'redux/auth/authOperations';
+import authOperations from "redux/auth/authOperations";
 import scss from "./Login.module.scss";
 
 export const LogIn = () => {
@@ -55,7 +55,6 @@ export const LogIn = () => {
                         className={scss.input}
                         type="password"
                         name="password"
-                        required
                         placeholder='Please enter password'
                         onChange={handleChange}
                         value={password}

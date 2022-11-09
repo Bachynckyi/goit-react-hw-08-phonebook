@@ -1,8 +1,8 @@
-import scss from './ContactForm.module.scss';
-import { useState } from 'react';
+import scss from "./ContactForm.module.scss";
+import { useState } from "react";
 import { nanoid } from "nanoid";
-import { useDispatch, useSelector } from 'react-redux';
-import * as operations from 'redux/contacts/contactsOperations';
+import { useDispatch, useSelector } from "react-redux";
+import * as operations from "redux/contacts/contactsOperations";
 
 export const ContactForm = () => {
     const dispatch = useDispatch();

@@ -10,22 +10,15 @@
     
     &:not(:last-child) {
         margin-right: 30px;
-    };
-
-    &:last-child {
-        margin-right: 80px;
     }
-    };
+};
     
-    .active {
+.active {
     font-size: 26px;
     text-decoration: none;
     color: #0000ff;
     
-        &:not(:last-child) {
-            margin-right: 30px;
-        }
-        &:last-child {
-            margin-right: 80px;
-        }
+    &:not(:last-child) {
+        margin-right: 30px;
     }
+};

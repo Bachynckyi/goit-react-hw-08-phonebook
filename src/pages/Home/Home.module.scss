@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+};
+
+.buttonGetStarted {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(199, 194, 194);
+
+    &:hover{
+        color: #fff;
+        background-color: blue;
+    }
+};
+
+.phonebookImg {
+    display: block;
+    width: 250px;
+    height: 250px;
+};
+
+.imageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+};
+
+.imgType {
+    display: block;
+    width: 80px;
+    height: 70px;
+    border-radius: 7px;
+
+    &:not(:last-child){
+        margin-right: 20px;
+    }
+};
+
+.titleHome {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: blue;
+};
+
+
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 10px;
+    z-index: 1;
+    border: none;
+  }
+   
+  .btn:hover {
+    animation: animate 8s linear infinite;
+  }
+   
+  @keyframes animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+   
+  .btn:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: .5s;
+  }
+   
+  .btn:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+  }
