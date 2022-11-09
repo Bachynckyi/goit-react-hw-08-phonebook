@@ -9,6 +9,7 @@ export const Home = () => {
     const navigate = useNavigate();
     return (
         <>
+            <h1 className={scss.mainTitle}>Your phonebook</h1>
             <div className={scss.container}>
                 <img src={imagePhonebook} alt="phonebook" className={scss.phonebookImg}/>
                 <button 

@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -18,13 +17,4 @@
   justify-content: space-between;
   padding-left: 70px;
   padding-right: 70px;
-};
-
-.headerTitle {
-  position: absolute;
-  left: 38%;
-  margin: 0px;
-  padding: 0px;
-  font-size: 44px;
-  color: #0000ff;
 };
