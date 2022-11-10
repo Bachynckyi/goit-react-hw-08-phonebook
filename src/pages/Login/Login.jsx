@@ -23,13 +23,8 @@ export const LogIn = () => {
     const handleSubmit = event => {
         event.preventDefault();
         dispatch(authOperations.logIn({email, password}));
-        reset();
     };
 
-    const reset = () => {
-        setEmail("");
-        setPassword("");
-    };
 
     return (
         <div className={scss.container}> 

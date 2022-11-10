@@ -26,13 +26,6 @@ export const Register = () => {
     const handleSubmit = event => {
         event.preventDefault();
         dispatch(authOperations.register({name, email, password}));
-        reset();
-    };
-
-    const reset = () => {
-        setName("");
-        setEmail("");
-        setPassword("");
     };
 
     return (
